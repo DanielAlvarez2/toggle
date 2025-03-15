@@ -1,3 +1,3 @@
 # Toggle Software
-togglesoftware.com  
+ToggleSoftware.com  
 
