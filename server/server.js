@@ -1,6 +1,7 @@
 import express from 'express'
 import Name from './models/Name.js'
 import mongoose from 'mongoose'
+import requestIp from 'request-ip'
 const app = express();
 (async()=>{
     try{
@@ -14,6 +15,10 @@ const PORT = process.env.PORT || 1113
 app.listen(PORT, ()=> console.log(`Server Running on Port: ${PORT}`))
 app.use(express.static('../dist'))
 app.use(express.json())
+app.use((req,res,next)=>{
+    console.log(requestIp.getClientIp(req))
+    next()
+})
 const items = [
     {name:'Laptop',price:500},
     {name:'Desktop',price:700},
@@ -69,4 +74,3 @@ app.put('/api/names/:id',async(req,res)=>{
         console.log(err)
     }
 })
-setInterval(()=>fetch('https://toggle-f81a.onrender.com'),600000)
