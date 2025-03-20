@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react'
 import { FaPlusCircle } from 'react-icons/fa'
 import { VscSave } from "react-icons/vsc"
+import Logo from './components/Logo.jsx'
 export default function App(){
   const [editForm, setEditForm] = useState(false)
   const [names, setNames] = useState([])
@@ -55,6 +56,7 @@ export default function App(){
   }
   return(
     <>
+      <Logo />
       <form action={ editForm ? updateName : addName}>
         <input type='hidden' id='id' name='id' value={hiddenID} />
         <label>
