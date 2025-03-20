@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'beasigne';
-    src: url('./BEASIGNE.otf') format('opentype');
+    src: url('BEASIGNE.otf') format('opentype');
 }
 #logo-wrapper{
     width:100%;
