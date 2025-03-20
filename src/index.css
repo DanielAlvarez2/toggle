@@ -5,7 +5,7 @@
 }
 @font-face{
   font-family: 'beasigne';
-  src: url('./fonts/BEASIGNE.otf') format('opentype');
+  src: url('./assets/BEASIGNE.otf') format('opentype');
 }
 button{
   color:white;
