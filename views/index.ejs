@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToggleSoftware.com</title>
+    <style>
+        @font-face{
+            font-family: 'beasigne';
+            src: url('BEASIGNE.otf')
+        }
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        #wrapper{
+            width:100%;
+            min-height:100vh;
+            display:grid;
+            place-content: center;
+        }
+        #logo{
+            width:315px;
+            height:315px;
+        }
+        #logo-top,#logo-mid,#logo-bottom{
+            width:315px;
+            height:105px;
+            border:1px solid red;
+            text-align: center;
+        }
+        #logo-mid{
+            font-family: beasigne
+        }
+    </style>
 </head>
 <body>
-    <h1>Toggle</h1>
-    <h2>Software</h2>
+    <div id="wrapper">
+        <div id="logo">
+            <div id="logo-top"></div>
+            <div id="logo-mid">
+                <h1>toggle</h1>
+                <h2>SOFTWARE</h2>
+            </div>
+            <div id="logo-bottom"></div>
+        </div>
+    </div>
 </body>
 </html>
