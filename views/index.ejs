@@ -31,21 +31,43 @@
         #logo{
             width:315px;
             height:315px;
-        }
-        #logo-top,#logo-mid,#logo-bottom{
-            width:315px;
-            height:105px;
             border:1px solid red;
-            text-align: center;
         }
-        #logo-mid{
-            font-family: beasigne
-        }
+        #toggle{
+        width:90px;
+        height:50px;
+        background:#0099ff;
+        border-radius:40px;
+        border: 12px solid red;
+        cursor:pointer;
+        margin:0 auto;
+        margin-top: 10px;
+      }
+      #toggle-inner{
+        width:20px;
+        height:20px;
+        border-radius:50%;
+        background:blue;
+        margin:3px;
+      }
+      #shadow{
+        position:relative;
+        right:13px;
+        margin: 20px auto;
+        width:60px;
+        height:1px;
+        box-shadow: 15px 5px 5px #111;
+      }
+
         h1{
+            width: 100%;
+            text-align: center;
             font-size:60px;
             color:blue;
+            font-family: beasigne;
         }
         h2{
+            font-family: beasigne;
             font-weight:100;
             font-size:20px;
             background:black;
@@ -58,6 +80,8 @@
             margin-top:15px;
         }
         h3{
+            width:100%;
+            text-align: center;
             font-family: sans-serif;
             font-weight: 100;
             color:grey;
@@ -67,29 +91,40 @@
             font-family:serif;
         }
         #big-tech{
+            width:100%;
+            text-align: center;
             font-family: kaput;
             font-size:30px;
         }
         #small-business{
             font-family:signature;
             font-size:70px;
+            width:100%;
+            text-align: center;
+        }
+        #for{
+            width:100%;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div id="wrapper">
         <div id="logo">
-            <div id="logo-top"></div>
-            <div id="logo-mid">
+            
+                <div id="toggle">
+                    <div id="toggle-inner"></div>
+                </div>
+                <div id="shadow"></div>
+            
                 <h1>toggle</h1>
                 <h2>SOFTWARE</h2>
-            </div>
-            <div id="logo-bottom">
+            
                 <h3>togglesoftware.com</h3>
                 <div id="big-tech">BIG TECH</div> 
-                for 
+                <div id="for">for</div> 
                 <div id="small-business">Small Business</div>
-            </div>
+            
         </div>
     </div>
 </body>
