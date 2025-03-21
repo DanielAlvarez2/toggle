@@ -7,7 +7,15 @@
     <style>
         @font-face{
             font-family: 'beasigne';
-            src: url('BEASIGNE.otf')
+            src: url('BEASIGNE.otf');
+        }
+        @font-face{
+            font-family:'kaput';
+            src:url('Kaput-BlackItalic.ttf');
+        }
+        @font-face{
+            font-family:'signature';
+            src:url('BusinessSignature.otf');
         }
         *{
             margin:0;
@@ -33,6 +41,39 @@
         #logo-mid{
             font-family: beasigne
         }
+        h1{
+            font-size:60px;
+            color:blue;
+        }
+        h2{
+            font-weight:100;
+            font-size:20px;
+            background:black;
+            color:white;
+            margin:0 5px;
+            border-radius: 5px;
+            padding-top:4px;
+            padding-left: 8px;
+            letter-spacing: 12px;
+            margin-top:15px;
+        }
+        h3{
+            font-family: sans-serif;
+            font-weight: 100;
+            color:grey;
+            margin-bottom:5px;
+        }
+        h4{
+            font-family:serif;
+        }
+        #big-tech{
+            font-family: kaput;
+            font-size:30px;
+        }
+        #small-business{
+            font-family:signature;
+            font-size:70px;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +84,12 @@
                 <h1>toggle</h1>
                 <h2>SOFTWARE</h2>
             </div>
-            <div id="logo-bottom"></div>
+            <div id="logo-bottom">
+                <h3>togglesoftware.com</h3>
+                <div id="big-tech">BIG TECH</div> 
+                for 
+                <div id="small-business">Small Business</div>
+            </div>
         </div>
     </div>
 </body>
