@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToggleSoftware.com | Contact</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+            min-height:100vh;
+        }
+        form{
+            border:1px solid grey;
+            padding:10px;
+            border-radius: 5px;
+        }
+        h1{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Contact</li>
+                <li>FAQ</li>
+                <li>Pricing</li>
+            </ul>
+        </nav>
+        <main>
+            <form action="/form2email" method="POST">
+                <h1>CONTACT FORM</h1>
+                <label>
+                    Name:<br>
+                    <input type="text" name="name" placeholder="John Smith"><br><br>
+                </label>
+                <label>
+                    Email:<br>
+                    <input type="email" name="email" placeholder="name@company.com"><br><br>
+                </label>
+                <label>
+                    Phone Number:<br>
+                    <input type="text" name="phone" placeholder="555-555-5555"><br><br>
+                </label>
+                <label>
+                    Message:<br>
+                    <textarea cols="30" rows="5" name="message" placeholder="Type message here."></textarea><br><br>
+                </label>
+                <button>Send</button>
+            </form>
+        </main>
+        <footer>
+            &copy;2023-2025 ToggleSoftware.com - All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
