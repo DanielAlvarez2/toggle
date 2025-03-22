@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose');
-const nodemailer = require('nodemailer')
+const mongoose = require('mongoose')
+const nodemailer = require('nodemailer');
 (async ()=>{
     try{
         await mongoose.connect(process.env.MONGODB_URI)
@@ -21,7 +21,7 @@ app.post('/form2email', async(req,res)=>{
     try{
         const info = `
         <h1>Message from ToggleSoftware.com</h1>
-        
+
         `
     }catch(err){
         console.log(err)
