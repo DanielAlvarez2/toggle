@@ -23,15 +23,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Contact</li>
-                <li>FAQ</li>
-                <li>Pricing</li>
-                <li>Login</li>
-            </ul>
-        </nav>
+        <%- include('partials/nav.ejs') %>
         <main>
             <form action="/form2email" method="POST">
                 <h1>CONTACT FORM</h1>
@@ -54,9 +46,7 @@
                 <button>Send</button>
             </form>
         </main>
-        <footer>
-            &copy;2023-2025 ToggleSoftware.com - All rights reserved.
-        </footer>
+        <%- include('partials/footer.ejs') %>
     </div>
 </body>
 </html>
