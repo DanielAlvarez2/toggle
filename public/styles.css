@@ -17,7 +17,7 @@ li{
 }
 main{
     width:100%;
-    height:calc(100vh - 33px);
+    min-height:calc(100vh - 33px);
     display:grid;
     place-content: center;
 }

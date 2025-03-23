@@ -128,5 +128,19 @@
             
         </div>
     </div>
+
+    <script>
+        const toggleSwitch = document.querySelector('#toggle')
+        let toggleState = 'left'
+        toggleSwitch.addEventListener('click',()=>{
+            if (toggleState == 'left'){
+                toggleSwitch.style.transform = 'rotate(180deg)'
+                toggleState = 'right'
+            }else{
+                toggleSwitch.style.transform = 'rotate(0deg)'
+                toggleState = 'left'
+            }
+        })
+    </script>
 </body>
 </html>
