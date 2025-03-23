@@ -15,6 +15,10 @@ nav ul{
 li{
     list-style-type: none;
 }
+nav ul li a{
+    color:white;
+    text-decoration: none;
+}
 main{
     width:100%;
     min-height:calc(100vh - 33px);

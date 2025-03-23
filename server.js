@@ -23,6 +23,10 @@ app.use((req,res,next)=>{
 
 app.get('/', async(req,res)=>res.render('index.ejs'))
 app.get('/contact', async(req,res)=>res.render('contact.ejs'))
+app.get('/home', async(req,res)=>res.render('home.ejs'))
+app.get('/faq', async(req,res)=>res.render('faq.ejs'))
+app.get('/pricing', async(req,res)=>res.render('pricing.ejs'))
+app.get('/login', async(req,res)=>res.render('login.ejs'))
 app.post('/form2email', async(req,res)=>{
     try{
         console.log('req.body: '+req.body)
