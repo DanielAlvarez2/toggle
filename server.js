@@ -30,8 +30,7 @@ let uniqueIPs = new Set([])
 let IPlist = []
 app.use(async (req,res,next)=>{
     uniqueIPs.clear()
-    console.log('EMPTY? uniqueIPs Set: ' + [...uniqueIPs])
-    console.log('EMPTY? IPlist Array: ' + IPlist)
+    console.log('--------------------------------------------')
     console.log('current IP: ' + requestIP.getClientIp(req))
     IPlist = await IP.find()
     IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
