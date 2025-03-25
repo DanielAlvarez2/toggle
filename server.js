@@ -17,15 +17,25 @@ app.set('view engine','ejs')
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+
+
+
+
+
+
+
+
+
 const uniqueIPs = new Set
+let IPlist
 app.use(async (req,res,next)=>{
     console.log('current IP: ' + requestIP.getClientIp(req))
-    let IPlist = await IP.find()
+    IPlist = await IP.find()
     uniqueIPs.clear()
     IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
     console.log('Set: ' + [...uniqueIPs])
     console.log('Set Size: ' + uniqueIPs.size)
-    console.log(IPlist)
+    console.log('IPlist: ' + IPlist)
     if (!uniqueIPs.has(requestIP.getClientIp(req))){
         await IP.create({IPaddress:requestIP.getClientIp(req)})
     }
@@ -34,6 +44,15 @@ app.use(async (req,res,next)=>{
     IPlist = []
     next()
 })
+
+
+
+
+
+
+
+
+
 
 app.get('/', async(req,res)=>res.render('index.ejs'))
 app.get('/contact', async(req,res)=>res.render('contact.ejs'))
