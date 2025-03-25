@@ -36,12 +36,9 @@ app.use(async (req,res,next)=>{
     IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
     console.log('Set: ' + [...uniqueIPs])
     console.log('Set Size: ' + uniqueIPs.size)
-    console.log('IPlist: ' + IPlist)
     if (!uniqueIPs.has(requestIP.getClientIp(req))){
         await IP.create({IPaddress:requestIP.getClientIp(req)})
-        console.log('adding to db');
             (async()=>{
-                console.log('above try')
                 try{
                     const html = `
                     <h1>New Visitor</h1>
