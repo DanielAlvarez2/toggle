@@ -26,9 +26,9 @@ app.use(express.urlencoded({extended:true}))
 
 
 
-let uniqueIPs = new Set([])
-let IPlist = []
 app.use(async (req,res,next)=>{
+    let uniqueIPs = new Set([])
+    let IPlist = []
     console.log('EMPTY? uniqueIPs Set: ' + [...uniqueIPs])
     console.log('EMPTY? IPlist Array: ' + IPlist)
     console.log('current IP: ' + requestIP.getClientIp(req))
