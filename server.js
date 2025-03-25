@@ -31,6 +31,7 @@ app.use(async (req,res,next)=>{
     }
     const IPlength = await IP.find()
     console.log(IPlength.length)
+    IPlist = []
     next()
 })
 
