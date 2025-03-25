@@ -17,10 +17,11 @@ app.set('view engine','ejs')
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+const uniqueIPs = new Set
 app.use(async (req,res,next)=>{
     console.log('current IP: ' + requestIP.getClientIp(req))
     IPlist = await IP.find()
-    const uniqueIPs = new Set
+    uniqueIPs.clear()
     IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
     console.log('Set: ' + [...uniqueIPs])
     console.log('Set Size: ' + uniqueIPs.size)
