@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended:true}))
 
 
 
-let uniqueIPs = new Set
+let uniqueIPs = new Set()
 let IPlist = []
 app.use(async (req,res,next)=>{
     console.log('current IP: ' + requestIP.getClientIp(req))
