@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const requestIP = require('request-ip')
 const mongoose = require('mongoose')
+const IP = require('./models/IP.js')
 const nodemailer = require('nodemailer');
 (async ()=>{
     try{
@@ -16,8 +17,19 @@ app.set('view engine','ejs')
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use((req,res,next)=>{
+app.use(async (req,res,next)=>{
     console.log(requestIP.getClientIp(req))
+    IPlist = await IP.find()
+    const uniqueIPs = new Set
+    IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
+    console.log('Set: ' + [...uniqueIPs])
+    console.log('Set Size: ' + uniqueIPs.size)
+    console.log(IPlist)
+    if (!uniqueIPs.has(requestIP.getClientIp(req))){
+        await IP.create({IPaddress:requestIP.getClientIp(req)})
+    }
+    const IPlength = await IP.find()
+    console.log(IPlength)
     next()
 })
 
