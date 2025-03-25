@@ -5,5 +5,5 @@ const IPSchema = new mongoose.Schema({
         type:String,
         unique:true
     }
-})
+},{timestamps:true})
 module.exports = mongoose.model('IP', IPSchema)

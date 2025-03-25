@@ -37,7 +37,7 @@ app.use(async (req,res,next)=>{
     console.log('Set: ' + [...uniqueIPs])
     console.log('Set Size: ' + uniqueIPs.size)
     if (!uniqueIPs.has(requestIP.getClientIp(req))){
-        await IP.create({IPaddress:requestIP.getClientIp(req)})
+        await IP.create({IPaddress:requestIP.getClientIp(req)});
             (async()=>{
                 try{
                     const html = `
