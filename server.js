@@ -18,7 +18,7 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(async (req,res,next)=>{
-    console.log(requestIP.getClientIp(req))
+    console.log('current IP: ' + requestIP.getClientIp(req))
     IPlist = await IP.find()
     const uniqueIPs = new Set
     IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
@@ -29,7 +29,7 @@ app.use(async (req,res,next)=>{
         await IP.create({IPaddress:requestIP.getClientIp(req)})
     }
     const IPlength = await IP.find()
-    console.log(IPlength)
+    console.log(IPlength.length)
     next()
 })
 
