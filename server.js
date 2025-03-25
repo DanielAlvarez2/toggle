@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:true}))
 const uniqueIPs = new Set
 app.use(async (req,res,next)=>{
     console.log('current IP: ' + requestIP.getClientIp(req))
-    IPlist = await IP.find()
+    let IPlist = await IP.find()
     uniqueIPs.clear()
     IPlist.forEach(ip=>uniqueIPs.add(ip.IPaddress))
     console.log('Set: ' + [...uniqueIPs])
