@@ -38,34 +38,34 @@ app.use(async (req,res,next)=>{
     console.log('Set Size: ' + uniqueIPs.size)
     if (!uniqueIPs.has(requestIP.getClientIp(req))){
         await IP.create({IPaddress:requestIP.getClientIp(req)});
-            (async()=>{
-                try{
-                    const html = `
-                    <h1>New Visitor</h1>
-                    <p>IP Address: ${requestIP.getClientIp(req)}</p>
-                    `;
-                    (async()=>{
-                        const transporter = nodemailer.createTransport({
-                            host:'smtp.ionos.com',
-                            port:465,
-                            secure:true,
-                            auth:{
-                                user:'daniel.alvarez@togglesoftware.com',
-                                pass: process.env.PASSWORD
-                            }
-                        })
-                        const info = await transporter.sendMail({
-                            from:'Daniel Alvarez <daniel.alvarez@togglesoftware.com>',
-                            to: 'daniel.yllanes@hotmail.com',
-                            subject: 'Message from ToggleSoftware.com',
-                            html: html
-                        })
-                        console.log('Message Sent:' + info.messageId)
-                    })()
-                }catch(err){
-                    console.log(err)
-                }
-            })()
+            // (async()=>{
+            //     try{
+            //         const html = `
+            //         <h1>New Visitor</h1>
+            //         <p>IP Address: ${requestIP.getClientIp(req)}</p>
+            //         `;
+            //         (async()=>{
+            //             const transporter = nodemailer.createTransport({
+            //                 host:'smtp.ionos.com',
+            //                 port:465,
+            //                 secure:true,
+            //                 auth:{
+            //                     user:'daniel.alvarez@togglesoftware.com',
+            //                     pass: process.env.PASSWORD
+            //                 }
+            //             })
+            //             const info = await transporter.sendMail({
+            //                 from:'Daniel Alvarez <daniel.alvarez@togglesoftware.com>',
+            //                 to: 'daniel.yllanes@hotmail.com',
+            //                 subject: 'Message from ToggleSoftware.com',
+            //                 html: html
+            //             })
+            //             console.log('Message Sent:' + info.messageId)
+            //         })()
+            //     }catch(err){
+            //         console.log(err)
+            //     }
+            // })()
     }
     const IPlength = await IP.find()
     console.log(IPlength.length)
